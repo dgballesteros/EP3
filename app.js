@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+var session = require('express-session');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -26,6 +27,12 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+app.use(session({
+  secret: 'cambiaEstaClaveEnProduccion',
+  resave: false,
+  saveUninitialized: false
+}));
 
 // error handler
 app.use(function(err, req, res, next) {
