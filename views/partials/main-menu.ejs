@@ -1,0 +1,12 @@
+<header id="header">
+    <div id="titulo">
+      <h1>Pokédex</h1>
+      <p>Enciclopedia Pokemon Completa</p>
+    </div>
+    <nav id="menu-nav">
+      <a href="/" class="link-nav">Todos</a>
+      <% tipos.forEach(tipo => { %>
+        <a href="/tipos/<%= tipo %>" class="link-nav"><%= tipo %></a>
+      <% }); %> 
+    </nav>
+  </header>

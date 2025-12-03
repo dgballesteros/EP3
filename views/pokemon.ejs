@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+    <%- include('partials/main-menu.ejs') %>
+  <main>
+    <section id="pokemon-hero-section">
+        <div class="post-intro">
+            <h1><%= pokemon.nombre %></h1>
+            <p style="margin: 0;">#<%= pokemon.id %></p>
+            <p><%= pokemon.tipo %></p>
+            <img src="<%= pokemon.imagen %> " alt="" width="400" height="400"> 
+        </div>
+        <p><%- pokemon.descripcion %></p>
+        <div class="back-link">
+          <a href="/">Volver a la pokedex</a>
+        </div>
+    </section>
+  </main>
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>

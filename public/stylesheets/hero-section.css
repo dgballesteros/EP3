@@ -1,0 +1,50 @@
+section#hero-section {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 960px;
+    margin-bottom: 3rem;
+
+    div#cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        gap: 3rem;
+
+        a {
+            text-decoration: none;
+            div#card-inner {
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0px 0px 5px rgb(117, 117, 117);
+                max-width: 220px;
+                max-height: 420px;
+                border-radius: 5px;
+    
+                img {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: contain;
+                }
+    
+                div.card-text {
+                    width: 100%;
+                    color: rgb(0, 0, 0);
+    
+                    p {
+                        font-weight: bold;
+                        padding-left: 15px;
+                    }
+
+                    p.pokemon-id {
+                        color: grey; 
+                        font-weight: 300;
+                    }
+                }
+            }
+        }    
+    }
+}

@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <%- include('partials/main-menu.ejs') %>
+  <main>
+    <section id="hero-section">
+      <h2>Pokémon Registrados</h2>
+      <div id="cards-container">
+        <% pokemons.forEach(pokemon => { %>
+          <a href="/pokemon/<%= pokemon.id %> ">
+            <div id="card-inner">
+              <img src="<%= pokemon.imagen %>" alt="">
+              <div class="card-text">
+                <p class="pokemon-id">#<%= pokemon.id %></p>
+                <p class="pokemon-name"><%= pokemon.nombre %></p>
+              </div>
+            </div>
+          </a>
+        <% }); %> 
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer.ejs') %>
+  
+</body>
 </html>
